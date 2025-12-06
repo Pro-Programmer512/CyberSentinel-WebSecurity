@@ -1,0 +1,84 @@
+# Nmap Scan Results
+
+## Command Used
+nmap -v -A takshyantra.sypoly.org
+
+## Scan Timestamp
+May 17, 2024 – 10:30 EAT
+
+---
+
+## Scan Summary
+Nmap performed:
+- NSE Script Pre-scanning
+- Ping Scan
+- DNS Resolution
+- Connect Scan (1000 ports)
+- Service Version Detection
+- OS Fingerprinting
+- Traceroute
+
+Target:
+takshyantra.syploy.org  
+IP: 89.117.27.231
+
+---
+
+## Open Ports Detected
+1. **21/tcp – FTP**
+   - Service detected (details in full output)
+
+2. **3306/tcp – MySQL**
+   - Remote database port exposed  
+   - Potential for unauthorized access if weak credentials exist
+
+3. **80/tcp – HTTP**
+   - Web server running  
+   - Likely default Apache/Nginx unless detected otherwise
+
+4. **443/tcp – HTTPS**
+   - Secure web service enabled  
+   - SSL/TLS configuration needs further analysis
+
+---
+
+## Detailed Scan Output
+Starting Nmap 7.94SVN ( https://nmap.org )  
+NSE: Loaded 156 scripts
+
+Initiating NSE at 10:30  
+Completed NSE at 10:30, 0.00s elapsed
+
+Initiating Ping Scan at 10:30  
+Completed Ping Scan at 10:30, 0.04s elapsed (1 host up)
+
+Initiating DNS resolution  
+Completed in 0.04s
+
+Initiating Connect Scan (1000 ports)  
+Open ports discovered:
+- 21/tcp
+- 3306/tcp
+- 80/tcp
+- 443/tcp
+
+Completed Connect Scan at 10:30, 5.11s elapsed
+
+(Additional advanced scan details can be appended here…)
+
+---
+
+## Key Observations
+- Multiple critical services exposed:
+  - FTP → often vulnerable to weak credentials
+  - MySQL → major risk if remotely accessible
+  - HTTP/HTTPS → must be tested for web vulnerabilities (XSS, SQLi, etc.)
+- Server responded consistently across scans (no packet filtering)
+
+---
+
+## Recommended Next Steps
+- Perform detailed vulnerability scanning on open ports
+- Check FTP/MySQL authentication bypass possibilities
+- Analyse HTTP/HTTPS with Burp Suite
+- Review SSL/TLS configuration
